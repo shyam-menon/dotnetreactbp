@@ -1,0 +1,44 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Documents
+*.md text diff=markdown
+*.txt text
+*.sql text
+
+# C# source files
+*.cs text diff=csharp
+*.sln text merge=union
+*.csproj text merge=union
+
+# Web source files
+*.htm text diff=html
+*.html text diff=html
+*.css text diff=css
+*.sass text
+*.scss text diff=css
+*.less text diff=css
+*.js text
+*.ts text
+*.tsx text
+*.jsx text
+
+# Serialization
+*.json text
+*.toml text
+*.xml text
+*.yaml text
+*.yml text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.7z binary
+*.ttf binary
+*.eot binary
+*.woff binary
+*.woff2 binary

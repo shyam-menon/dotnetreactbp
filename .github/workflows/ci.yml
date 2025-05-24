@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore ./backend/MyApp.Api/MyApp.Api.csproj
+    - name: Build
+      run: dotnet build ./backend/MyApp.Api/MyApp.Api.csproj --no-restore
+    # Add tests if you have them
+    # - name: Test
+    #   run: dotnet test --no-build --verbosity normal
+
+  build-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'npm'
+        cache-dependency-path: ./frontend/my-app-frontend/package-lock.json
+    - name: Install dependencies
+      run: cd frontend/my-app-frontend && npm ci
+    - name: Build
+      run: cd frontend/my-app-frontend && npm run build
+    # Add tests if you have them
+    # - name: Test
+    #   run: cd frontend/my-app-frontend && npm test

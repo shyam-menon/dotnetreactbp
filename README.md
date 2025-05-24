@@ -6,6 +6,8 @@ This is a blueprint starter template for building applications with React fronte
 
 - `/frontend` - React application built with Vite and TypeScript
 - `/backend` - .NET Web API application
+- `/docs` - Documentation
+- `/.github` - GitHub Actions workflows
 
 ## Getting Started
 
@@ -50,12 +52,53 @@ The React application will start at `http://localhost:3000`.
 - .NET Web API backend
 - Pre-configured proxy settings
 - Clean project structure
+- GitHub Actions CI/CD configuration
+- Comprehensive documentation
+
+## How to Use This Template
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/shyam-menon/dotnetreactbp.git your-project-name
+```
+
+2. Navigate to your project folder:
+
+```bash
+cd your-project-name
+```
+
+3. Remove the existing Git history:
+
+```bash
+rm -rf .git
+```
+
+4. Initialize a new Git repository:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit from template"
+```
+
+5. Connect to your own remote repository:
+
+```bash
+git remote add origin https://github.com/your-username/your-repo-name.git
+git push -u origin master
+```
 
 ## Customization
 
 - Update package names in `package.json` and project files
 - Modify proxy settings in `vite.config.ts` if needed
 - Adjust API endpoints to match your requirements
+
+## Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this template.
 
 ## License
 
